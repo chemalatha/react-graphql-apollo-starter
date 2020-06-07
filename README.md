@@ -1,6 +1,6 @@
-# React Node GraphQL TypeScript - Starter Kit
+# React GraphQL Apollo Started
 
-As I was bootstraping a webapplication I created this starter kit for my use. The technology stack of this kit is collection of all coolatest technologies which I want to use in my web application.
+This is a full stack project with mongdb as backend, graphql with expressjs as server and react with react-apollo as middleware.
 
 ## To get started
 
@@ -8,11 +8,11 @@ To get started using the kit follow following steps:
 ##### Repo cloning and setup:
 1. Clone the git repo.
 2. `cd client` followed by `yarn`
-3. `cd server` followed by `yarn`
+3. `cd server` followed by `npm i`
 ##### DB setup:
-1. `createuser myuser --password;`
-2. `createdb myapp;`
-3. Connect to the DB `psql myapp` and run `grant all privileges on database myapp to myuser;`
+make sure to have mongo running at 27017 is the only requirement for now
+user authentication is on its way
+
 ##### Starting development servers:
 To start client server in development mode:
 1. `cd client`
@@ -20,8 +20,7 @@ To start client server in development mode:
 
 To start server iin development mode:
 1. `cd server`
-2. `yarn run watch`
-3. `yarn run serve`
+2. `npm run start`
 
 ## Libraries used
 Following libraries / utilities have been used in the repo:
@@ -48,7 +47,5 @@ Following libraries / utilities have been used in the repo:
 10. chai: 4.1.1
 
 References:
-1. https://github.com/Microsoft/TypeScript-React-Starter
-2. https://github.com/Microsoft/TypeScript-Node-Starter
-3. https://github.com/facebook/jest/blob/master/examples/typescript
+1. https://github.com/jpuri/GraphQL-Typescript-Starter
 # react-graphql-apollo-starter
