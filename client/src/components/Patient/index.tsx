@@ -2,10 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 export interface PatientIntf {
-  id: string;
-  name: string;
-  address: string;
-  age: number;
+  id:string;
+  firstName: string;
+  lastName: string;
+  email: string;
 }
 
 interface Props {
@@ -29,10 +29,10 @@ class Patient extends React.Component<Props> {
     const { patient } = this.props;
     return (
       <tr>
+        <Cell>{patient.firstName}</Cell>
+        <Cell>{patient.lastName}</Cell>
+        <Cell>{patient.email}</Cell>
         <Cell onClick={this.deletePatient}>Delete</Cell>
-        <Cell>{patient.name}</Cell>
-        <Cell>{patient.age}</Cell>
-        <Cell>{patient.address}</Cell>
       </tr>
     );
   }

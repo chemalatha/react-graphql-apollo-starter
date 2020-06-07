@@ -10,7 +10,7 @@ import {
 import { BrowserRouter } from 'react-router-dom';
 
 const networkInterface = createNetworkInterface({
-  uri: 'http://localhost:9000/graphql'
+  uri: 'http://localhost:4000/graphql'
 });
 
 const client = new ApolloClient({

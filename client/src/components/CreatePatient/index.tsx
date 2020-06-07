@@ -5,14 +5,14 @@ import styled from 'styled-components';
 
 const CREATE_PATIENT_MUTATION = gql`
   mutation CreatePatientMutation(
-    $name: String!
-    $address: String!
-    $age: Int!
+    $firstName: String!
+    $lastName: String!
+    $email: String!
   ) {
-    createPatient(name: $name, address: $address, age: $age) {
-      name
-      address
-      age
+    createPatient(firstName: $firstName, lastName: $lastName, email: $email) {
+      firstName
+      lastName
+      email
     }
   }
 `;
@@ -34,9 +34,9 @@ const Button = styled.button`margin: 20px;`;
 
 class CreatePatient extends PureComponent<Props> {
   state = {
-    name: undefined,
-    address: undefined,
-    age: undefined
+    firstName: undefined,
+    lastName: undefined,
+    email: undefined
   };
 
   updateValue = (event: any) => {
@@ -51,33 +51,33 @@ class CreatePatient extends PureComponent<Props> {
       <div>
         <div>
           <Field>
-            <Label>Name</Label>
+            <Label>FirstName</Label>
             <input
-              value={this.state.name}
+              value={this.state.firstName}
               onChange={this.updateValue}
-              name="name"
+              name="firstName"
               type="text"
-              placeholder="Name"
+              placeholder="FirstName"
             />
           </Field>
           <Field>
-            <Label>Address</Label>
+            <Label>LastName</Label>
             <input
-              value={this.state.address}
+              value={this.state.lastName}
               onChange={this.updateValue}
-              name="address"
+              name="lastName"
               type="text"
-              placeholder="Address"
+              placeholder="LastName"
             />
           </Field>
           <Field>
-            <Label>Age</Label>
+            <Label>Email</Label>
             <input
-              value={this.state.age}
+              value={this.state.email}
               onChange={this.updateValue}
-              name="age"
-              type="number"
-              placeholder="Age"
+              name="email"
+              type="text"
+              placeholder="Email"
             />
           </Field>
         </div>
@@ -87,13 +87,13 @@ class CreatePatient extends PureComponent<Props> {
   }
 
   _createPatient = async () => {
-    const { name, address, age } = this.state;
+    const { firstName, lastName, email } = this.state;
     const { createPatientMutation, history } = this.props;
     await createPatientMutation({
       variables: {
-        name,
-        address,
-        age
+        firstName,
+        lastName,
+        email
       }
     });
     history.push(`/`);

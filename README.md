@@ -51,3 +51,4 @@ References:
 1. https://github.com/Microsoft/TypeScript-React-Starter
 2. https://github.com/Microsoft/TypeScript-Node-Starter
 3. https://github.com/facebook/jest/blob/master/examples/typescript
+# react-graphql-apollo-starter

@@ -7,9 +7,9 @@ const ALL_PATIENTS_QUERY = gql`
   query AllPatientsQuery {
     allPatients {
       id
-      name
-      address
-      age
+      firstName
+      lastName
+      email
     }
   }
 `;
@@ -18,7 +18,10 @@ const DELETE_PATIENTS_MUTATION = gql`
   mutation DeletePatientMutation(
     $id: String!
   ) {
-    deletePatient(id: $id)
+    deletePatient(id: $id){
+      id
+      email
+    }
   }
 `;
 
@@ -54,14 +57,14 @@ export class PatientList extends PureComponent<Props> {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Address</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
           </tr>
         </thead>
         <tbody>
           {allPatients.map((patient: PatientIntf) =>
-            <Patient key={patient.id} patient={patient} deletePatient={this.deletePatient}/>
+            <Patient key={patient.id} patient={patient} deletePatient={()=>this.deletePatient(patient.id)}/>
           )}
         </tbody>
       </table>
